@@ -1,0 +1,403 @@
+@use "sass:map";
+
+@each $side, $size in $spacing-sizes {
+    @each $property, $attr in $spacing-properties {
+        .#{$property}-#{$side}, .#{$property}x-#{$side}, .#{$property}l-#{$side} {
+            #{$attr}-left: #{$size} !important;
+        }
+        .#{$property}-#{$side}, .#{$property}x-#{$side}, .#{$property}r-#{$side} {
+            #{$attr}-right: #{$size} !important;
+        }
+        .#{$property}-#{$side}, .#{$property}y-#{$side}, .#{$property}t-#{$side} {
+            #{$attr}-top: #{$size} !important;
+        }
+        .#{$property}-#{$side}, .#{$property}y-#{$side}, .#{$property}b-#{$side} {
+            #{$attr}-bottom: #{$size} !important;
+        }
+    }
+}
+
+@each $side, $size in $letter-spacing {
+    .letter-spacing-#{$side} {
+        letter-spacing: #{$size}
+    }
+}
+
+@each $side, $size in $heading-font-sizes {
+    h#{$side}, .h#{$side} {
+        font-size: #{$size}
+    }
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-bolder {
+    font-weight: bolder;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-line-through {
+    text-decoration: line-through;
+}
+
+.text-none {
+    text-decoration: none;
+}
+
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-break {
+    word-break: break-all;
+}
+
+@each $breakpoint, $size in $text-sizes {
+    .text-#{$breakpoint} {
+        font-size: #{$size}
+    }
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.background-position-center {
+    background-position: center;
+}
+
+.background-position-left {
+    background-position: left;
+}
+
+.background-position-right {
+    background-position: right;
+}
+
+.background-position-top {
+    background-position: top;
+}
+
+.background-position-bottom {
+    background-position: bottom;
+}
+
+.background-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.background-repeat {
+    background-repeat: repeat;
+}
+
+.background-repeat-x {
+    background-repeat: repeat-x;
+}
+
+.background-repeat-y {
+    background-repeat: repeat-y;
+}
+
+.background-repeat-round {
+    background-repeat: round;
+}
+
+.background-repeat-space {
+    background-repeat: space;
+}
+
+.background-cover {
+    background-size: cover;
+}
+
+.background-contain {
+    background-size: contain;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-sticky {
+    position: sticky;
+}
+
+.img-cover {
+    object-fit: cover;
+}
+
+.img-contain {
+    object-fit: contain;
+}
+
+.img-center {
+    object-position: center;
+}
+
+.img-top {
+    object-position: top;
+}
+
+.img-bottom {
+    object-position: bottom;
+}
+
+@each $size, $value in $sizing-values {
+    @each $class, $property in $sizing-properties {
+        .#{$class}-#{$size} {
+            #{$property}: #{$value};
+        }
+    }
+}
+
+.btn {
+    padding: .375rem .75rem;
+    border-radius: $border-radius;
+    border-width: thin;
+    border-style: solid;
+    display: inline-block;
+    transition: .3s ease;
+    text-decoration: none;
+}
+
+@each $class, $color, $contrast in $color-schemas {
+    .text-#{$class} {
+        color: $color
+    }
+    .bg-#{$class} {
+        background-color: $color
+    }
+    .btn-#{$class} {
+        background-color: $color;
+        border-color: $color;
+        color: $contrast;
+
+        &:hover {
+            background-color: $contrast;
+            border-color: $contrast;
+            color: $color;
+        }
+    }
+    .btn-outline-#{$class} {
+        background-color: transparent;
+        border-color: $color;
+        color: $color;
+
+        &:hover {
+            background-color: $color;
+            border-color: $color;
+            color: $contrast;
+        }
+    }
+
+}
+
+.d-block {
+    display: block;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-inline-flex {
+    display: inline-flex;
+}
+
+.d-inline-grid {
+    display: inline-grid;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
+.justify-content-space-evenly {
+    justify-content: space-evenly;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-stretch {
+    justify-content: stretch;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-content-center {
+    align-content: center;
+}
+
+.align-content-start {
+    align-content: flex-start;
+}
+
+.align-content-end {
+    align-content: flex-end;
+}
+
+.border {
+    border: thin solid $border-color;
+    border-radius: $border-radius;
+}
+
+.border-rounded {
+    border-radius: $border-radius * 2;
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+    width: calc(100% - $container-gutter);
+    padding-right: calc($container-gutter * 0.5);
+    padding-left: calc($container-gutter * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: map.get($breakpoints, sm)) {
+    .container-sm, .container {
+        max-width: map.get($container-max-widths, sm);
+    }
+}
+
+@media screen and (min-width: map.get($breakpoints, md)) {
+    .container-md, .container-sm, .container {
+        max-width: map.get($container-max-widths, md);
+    }
+}
+
+@media screen and (min-width: map.get($breakpoints, lg)) {
+    .container-lg, .container-md, .container-sm, .container {
+        max-width: map.get($container-max-widths, lg);
+    }
+}
+
+@media screen and (min-width: map.get($breakpoints, xl)) {
+    .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: map.get($container-max-widths, xl);
+    }
+}
+
+@media screen and (min-width: map.get($breakpoints, xxl)) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+        max-width: map.get($container-max-widths, xxl);
+    }
+}
+
+
+html {
+    font-size: map.get($font-sizes, sm);
+
+    @media screen and (min-width: map.get($breakpoints, lg)) {
+        font-size: map.get($font-sizes, base)
+    }
+
+    @media screen and (min-width: map.get($breakpoints, xl)) {
+        font-size: map.get($font-sizes, lg)
+    }
+}

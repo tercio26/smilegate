@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  web:
+    container_name: web
+    build: .
+    ports:
+      - "3003:3003"
+    volumes:
+      - ./:/app
+    restart: always
+    stdin_open: true
+    tty: true
+    networks:
+      - smilegate
+
+networks:
+  smilegate:
+
+volumes:
+  db-data:
+    external: false
