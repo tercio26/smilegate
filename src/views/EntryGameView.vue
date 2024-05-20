@@ -1,3 +1,3 @@
 <template>
-  <h1 class="text-center">Entry game</h1>
+  <h1 class="">Entry game</h1>
 </template>

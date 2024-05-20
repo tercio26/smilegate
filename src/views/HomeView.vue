@@ -1,5 +1,6 @@
 <template>
   <h1>Photo Cards:</h1>
+
   <div class="card-list mt-3">
     <a v-for="card in cardData" :key="card.id" class="card" href="javascript:;">
       <div class="card-image">
@@ -14,7 +15,6 @@
 </template>
 
 <script>
-import { RouterLink, RouterView } from 'vue-router'
 import { useAppStore } from '@/stores/app'
 import { mapState, mapStores } from 'pinia'
 

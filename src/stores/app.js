@@ -21,19 +21,22 @@ export const useAppStore = defineStore('app', {
   actions: {
     async getAppConfig() {
       // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
+      // Fake data
       this.appConfig = {
         logo: 'https://i.imgur.com/sOCVfKv.png',
         title: 'Hieu Tran',
         description: 'SmileGate test code',
       }
+      return this.appConfig
     },
 
     async fetchCards(count = 30) {
       // Simulate API delay
-      await new Promise((resolve) => setTimeout(resolve, 0));
+      await new Promise((resolve) => setTimeout(resolve, 2500));
 
+      // Fake data
       const image = {
         landscape: 'https://i.imgur.com/unmma82.jpeg',
         portrait: 'https://i.imgur.com/2MM9Jqo.jpeg'
@@ -52,6 +55,7 @@ export const useAppStore = defineStore('app', {
         });
       }
       this.cards = result
+      return this.cards
     },
 
     getRandomSentence() {

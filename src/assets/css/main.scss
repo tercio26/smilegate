@@ -3,9 +3,9 @@
 @import './_base.scss';
 
 main {
-    //display: flex;
-    //flex-direction: column;
-    //min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 footer {
@@ -37,7 +37,7 @@ header {
     padding-bottom: .5rem;
 
     .navbar-brand {
-        font-size: 1.25rem;
+        font-size: 1.125rem;
         white-space: nowrap;
         margin-right: 1rem;
         color: $light;
@@ -50,7 +50,7 @@ header {
 
         img {
             width: auto;
-            max-height: 3rem;
+            max-height: 2rem;
             margin-right: .5rem;
         }
     }
@@ -69,6 +69,7 @@ header {
 
         .nav-item {
             width: auto;
+            text-align: center;
 
             &+.nav-item {
                 margin-left: .75rem;
@@ -104,6 +105,7 @@ header {
             aspect-ratio: 3/2;
             object-fit: cover;
             transition: .5s ease;
+            display: block;
         }
 
         .card-info {
