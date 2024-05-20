@@ -2,3 +2,11 @@
 @import "_reset.min.scss";
 @import "_variables.scss";
 @import "_ultilities.scss";
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+}

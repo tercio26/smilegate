@@ -3,7 +3,10 @@
     <div class="container">
       <div class="navbar">
         <RouterLink class="navbar-brand" :to="{name: 'home'}">
-          <img alt="STOVE" :src="appConfig.logo"/>{{ appConfig.title }}
+          <img alt="STOVE Logo"
+               :title="appConfig.description"
+               :aria-label="appConfig.description"
+               :src="appConfig.logo"/>{{ appConfig.title }}
         </RouterLink>
 
 
